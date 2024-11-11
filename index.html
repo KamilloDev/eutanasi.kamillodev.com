@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="http://eutanasi.kamillodev.com/mapdata.js"></script>		
-    <script type="text/javascript" src="http://eutanasi.kamillodev.com/worldmap.js"></script>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aktiv Eutanasi</title>
 </head>
 <body>
-    <div id="map"></div>
+    <div class="world-map">
+        <div class="map-container">
+            <img src="world.svg" alt="Map"/>
+        </div>
+    </div>
+
+    <div class="side-panel">
+        <div class="container">
+            <h1 class="country-name">Danmark</h1>
+            <img src="./flag.png" alt="flag af landet">
+            
+            <ul>
+                <li>
+                    <strong>Tillader eutanasi:</strong>
+                    <span class="tillader-eutanasi"></span>
+                </li>
+                <li>
+                    <strong>Hvornår blev eutanasi lovligt::</strong>
+                    <span class="hvornår-eutanasi"></span>
+                </li>
+                <li>
+                    <strong>Hvor mange har vedtaget eutanasi:</strong>
+                    <span class="hvormange-eutanasi"></span>
+                </li>
+            </ul>
+
+        </div>
+        <button class="close-btn">
+            <i class="fas fa-times">X</i>
+        </button>
+        <h2 class="loading">Loading...</h2>
+        
+    </div>
+
+    <div class="zoom-controls">
+        <button class="zoom-in">+</button>
+        <button class="zoom-out">-</button>
+        <p class="zoom-value">100%</p>
+    </div>
+
 </body>
 </html>
