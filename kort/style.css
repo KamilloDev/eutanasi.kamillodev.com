@@ -2,6 +2,9 @@ body {
     font-family: sans-serif;
     color: #fff;
 }
+svg {
+    overflow: visible;
+  }
 
 * {
     margin: 0;

@@ -29,7 +29,7 @@ function initMap() {
       if (classList) {
         const selector = '.' + classList;
         const matchingElements = document.querySelectorAll(selector);
-        matchingElements.forEach(el => el.style.fill = "#443d4b");
+        matchingElements.forEach(el => el.style.fill = "#d8d1df");
       }
     });
 
@@ -67,3 +67,4 @@ function initMap() {
 
   closeBtn.addEventListener("click", () => sidePanel.classList.remove("side-panel-open"));
 }
+

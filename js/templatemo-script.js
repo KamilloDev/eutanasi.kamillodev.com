@@ -4,6 +4,7 @@
  * CSS3 animation effects for Magnific Popup: https://codepen.io/dimsemenov/pen/GAIkt
  */
 
+
 $(document).ready(function () {
 
     /*************** Gallery ******************/

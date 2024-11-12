@@ -1,0 +1,213 @@
+/* General Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f2f3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #309AFD;
+    transition: color 0.3s ease;
+}
+
+a:hover, a.active {
+    color: #1d70b8;
+}
+.tm-color-primary {
+    color:#309AFD;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0 0 1em;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.tm-site-header {
+    padding: 60px 70px 30px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.tm-site-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.tm-site-header em {
+    display: block;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* Navigation */
+.tm-main-nav {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.tm-main-nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.tm-nav-item {
+    margin: 0 15px;
+}
+
+.tm-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.tm-nav-link i {
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.tm-nav-link:hover, .tm-nav-link.active {
+    color: #309AFD;
+}
+
+/* Container */
+.tm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* About Us Section */
+.tm-about-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.tm-about-col {
+    flex: 1;
+    padding: 15px;
+}
+
+.tm-about-left {
+    flex: 2;
+}
+
+.tm-about-col img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tm-page-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #309AFD;
+}
+
+/* Meet Our Team Section */
+.tm-team-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    margin-top: 40px;
+}
+
+.tm-team-col {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+}
+
+.tm-team-col img {
+    border-radius: 50%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.tm-team-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tm-team-col p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+.tm-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tm-about-row, .tm-team-row {
+        flex-direction: column;
+    }
+
+    .tm-about-left {
+        flex: 1;
+    }
+}
+
+/* Experts Section */
+.tm-expert-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.tm-expert-col {
+    flex: 1 1 30%;
+    max-width: 30%;
+    padding: 15px;
+    text-align: center;
+}
+
+.tm-expert-img {
+    border-radius: 50%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.tm-expert-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.tm-expert-col p {
+    font-size: 1rem;
+    color: #666;
+}
