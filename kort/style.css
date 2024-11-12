@@ -33,7 +33,7 @@ body {
     width: max-content;
     height: max-content;
     min-height: 30em;
-    background-color: #151218;
+    background-color: #156bdb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@ svg {
 }
 
 path {
-    fill: #443d4b;
+    fill: #d8d1df;
     stroke: #dcbfff;
     transition: 100ms;
 }

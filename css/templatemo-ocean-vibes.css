@@ -87,6 +87,7 @@ div { box-sizing: border-box;}
 .tm-color-gray { color: #666768; }
 .tm-color-gray-2 { color: #98999A; }
 .tm-color-light-gray { color: #9E9FA0; }
+.tm-color-black {color:black;}
 .tm-bg-white { background-color: #FFF; }
 .tm-bg-gray { background-color: #F1F2F3; }
 blockquote { margin: 0 0 30px 10px; }
