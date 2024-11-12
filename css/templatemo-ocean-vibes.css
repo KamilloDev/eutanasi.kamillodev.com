@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 .topnav {
-    position: fixed; /* Fixes navbar to the screen */
+    position: absolute; /* Fixes navbar to the screen */
     top: 0;          /* Aligns it to the top of the screen */
     right: 0;        /* Aligns it to the right of the screen */
     margin-top: 10px; /* Add some spacing from the top */

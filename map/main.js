@@ -9,8 +9,8 @@ fetch('world.svg')
 function initMap() {
   const map = document.querySelector("svg");
   const countries = document.querySelectorAll("path");
-  const sidePanel = document.querySelector(".sidepanel");
-  const container = document.querySelector(".sidepanel .container");
+  const sidePanel = document.querySelector(".side-panel");
+  const container = document.querySelector(".container");
   const closeBtn = document.querySelector(".close-btn");
   const loading = document.querySelector(".loading");
 
