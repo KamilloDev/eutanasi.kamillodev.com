@@ -14,20 +14,34 @@ body {
     line-height: 1.8em;
     overflow-x: hidden;
 }
-
 .topnav {
-    position: relative;
-    margin-top: 5px;
-    padding: 0;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    text-align: center;
-    padding: 20px 24px;
+    position: fixed; /* Fixes navbar to the screen */
+    top: 0;          /* Aligns it to the top of the screen */
+    right: 0;        /* Aligns it to the right of the screen */
+    margin-top: 10px; /* Add some spacing from the top */
+    padding: 10px 20px; /* Adjust padding as needed */
+    z-index: 1000;   /* Ensures it's on top of other content */
   }
 
-.topnav a:not(:last-child) {
-    margin-right: 20px; /* Adjust the space between items */
+  .topnav a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  .topnav .nav:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav .active:hover {
+    background-color: #ddd;
+    color: rgb(93, 103, 235);
+  }
+
+  .topnav a:not(:last-child) {
+    margin-right: 20px; /* Space between navbar items */
   }
 
 p, span, em, a, address { color: #848586; }
