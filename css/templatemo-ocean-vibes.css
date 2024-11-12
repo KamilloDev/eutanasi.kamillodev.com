@@ -19,12 +19,12 @@ body {
     position: relative;
     margin-top: 5px;
     padding: 0;
-    margin-bottom: 0%;
-    float: right;
-    margin-right: 10px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
     text-align: center;
     padding: 20px 24px;
-}
+  }
 
 .topnav a:not(:last-child) {
     margin-right: 20px; /* Adjust the space between items */
