@@ -115,11 +115,12 @@ a {
 }
 
 #tm-video-container {
-    max-height: 400px;
+    max-height: 600px;
     overflow: hidden;
     background-color: #333;
     margin-bottom: 90px;
-    position: relative;
+    position: absolute;
+    z-index: -1;
 }
 
 #tm-video {
