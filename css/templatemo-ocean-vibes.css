@@ -115,8 +115,8 @@ a {
 }
 
 #tm-video-container {
-    max-height: 600px;
-    overflow: hidden;
+    max-height: 800px;
+    margin-top: 20px;
     background-color: #333;
     margin-bottom: 90px;
     position: absolute;
@@ -139,6 +139,10 @@ a {
 .tm-nav-item {
     list-style: none;
     margin: 22px;   
+    margin-top: 350px;
+    background-color: #FFF;
+    opacity: 90%;
+    border-radius: 15%;
 }
 
 .tm-nav-link {
@@ -148,7 +152,7 @@ a {
     width: 200px;
     height: 200px;
     padding: 30px;
-    border: 1px solid #D2D3D4;
+    
     color: #999; 
     box-sizing: border-box;
 }
