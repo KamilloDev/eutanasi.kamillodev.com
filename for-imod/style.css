@@ -1,0 +1,77 @@
+/* Improved styling with boxed layout and spacing */
+
+.tm-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.tm-col {
+    flex: 0 1 48%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f9fafb;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.tm-col-for {
+    background-color: #e6f7ff;
+}
+
+.tm-col-against {
+    background-color: #fff1f0;
+}
+
+.tm-col h2 {
+    margin-bottom: 15px;
+}
+
+.tm-col ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.vote-button {
+    padding: 10px 20px;
+    background-color: #309AFD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vote-button:hover {
+    background-color: #2678cc;
+}
+
+#votes-for,
+#votes-against {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .tm-col {
+        flex: 1 0 100%;
+    }
+}
+
+/* Existing styles... */
+
+.confirm-button {
+    padding: 10px 20px;
+    background-color: #52c41a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.confirm-button:hover {
+    background-color: #389e0d;
+}
