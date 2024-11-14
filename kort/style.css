@@ -90,6 +90,9 @@ path:hover {
     opacity: 1;
     left: 0em;
 }
+.loading {
+    opacity: 0;
+}
 
 .close-btn {
     position: absolute;
