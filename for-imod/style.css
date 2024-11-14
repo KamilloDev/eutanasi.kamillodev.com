@@ -1,13 +1,13 @@
 /* Improved styling with boxed layout and spacing */
 
-.tm-row {
+.tm-row1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 40px;
 }
 
-.tm-col {
+.tm-col1 {
     flex: 0 1 48%;
     box-sizing: border-box;
     padding: 20px;
@@ -17,25 +17,25 @@
     margin-bottom: 20px;
 }
 
-.tm-col-for {
+.tm-col-for1 {
     background-color: #e6f7ff;
 }
 
-.tm-col-against {
+.tm-col-against1 {
     background-color: #fff1f0;
 }
 
-.tm-col h2 {
+.tm-col1 h2 {
     margin-bottom: 15px;
 }
 
-.tm-col ul {
+.tm-col1 ul {
     list-style: disc;
     padding-left: 20px;
     margin-bottom: 20px;
 }
 
-.vote-button {
+.vote-button1 {
     padding: 10px 20px;
     background-color: #309AFD;
     color: #fff;
