@@ -1,21 +1,23 @@
 // server.js
 const express = require('express');
 const bodyParser = require('body-parser');
-const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config(); // Load environment variables
+
+const { Client } = require('pg');
 
 const app = express();
 const port = 3000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://kamillodev.github.io',
+}));
 app.use(express.static('public')); // Serve static files from 'public' directory
 
-// Replace SQLite initialization with PostgreSQL
-const { Client } = require('pg');
+// Initialize PostgreSQL Client
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -23,7 +25,9 @@ const client = new Client({
   },
 });
 
-client.connect();
+client.connect()
+  .then(() => console.log('Connected to PostgreSQL'))
+  .catch(err => console.error('Connection error', err.stack));
 
 // Admin Authentication Middleware using Basic Auth
 function adminAuth(req, res, next) {
@@ -50,7 +54,7 @@ app.post('/for-imod', (req, res) => {
   const voteOption = req.body.voteOption;
 
   if (voteOption === 'for' || voteOption === 'against') {
-    db.run(`INSERT INTO votes(vote_option) VALUES(?)`, [voteOption], function (err) {
+    client.query('INSERT INTO votes(vote_option) VALUES($1)', [voteOption], (err) => {
       if (err) {
         return res.status(500).send({ message: 'An error occurred' });
       }
@@ -63,14 +67,14 @@ app.post('/for-imod', (req, res) => {
 
 // Protected Route to Get Vote Counts
 app.get('/vote-counts', adminAuth, (req, res) => {
-  db.all(
-    `SELECT vote_option, COUNT(*) AS vote_count FROM votes GROUP BY vote_option`,
+  client.query(
+    'SELECT vote_option, COUNT(*) AS vote_count FROM votes GROUP BY vote_option',
     [],
-    (err, rows) => {
+    (err, result) => {
       if (err) {
         return res.status(500).send({ message: 'An error occurred' });
       }
-      res.status(200).json(rows);
+      res.status(200).json(result.rows);
     }
   );
 });
@@ -84,3 +88,4 @@ app.get('/admin', adminAuth, (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
