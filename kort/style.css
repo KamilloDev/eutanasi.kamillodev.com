@@ -92,6 +92,8 @@ path:hover {
 }
 .loading {
     opacity: 0;
+    display: none;
+    left: -30em;
 }
 
 .close-btn {
