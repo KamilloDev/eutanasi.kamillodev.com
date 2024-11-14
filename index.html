@@ -540,7 +540,8 @@ https://templatemo.com/tm-554-ocean-vibes
     <script src="js/templatemo-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    // script.js
+        document.addEventListener('DOMContentLoaded', () => {
         const voteForBtn = document.getElementById('vote-for');
         const confirmVoteForBtn = document.getElementById('confirm-vote-for');
         const voteAgainstBtn = document.getElementById('vote-against');
@@ -551,10 +552,16 @@ https://templatemo.com/tm-554-ocean-vibes
         });
 
         confirmVoteForBtn.addEventListener('click', () => {
-            alert('Tak for din stemme!');
-            confirmVoteForBtn.style.display = 'none';
-            voteForBtn.disabled = true;
-            voteAgainstBtn.disabled = true;
+            axios.post('http://localhost:3000/for-imod', { voteOption: 'for' })
+            .then(response => {
+                alert('Tak for din stemme!');
+                confirmVoteForBtn.style.display = 'none';
+                voteForBtn.disabled = true;
+                voteAgainstBtn.disabled = true;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
 
         voteAgainstBtn.addEventListener('click', () => {
@@ -562,12 +569,18 @@ https://templatemo.com/tm-554-ocean-vibes
         });
 
         confirmVoteAgainstBtn.addEventListener('click', () => {
-            alert('Tak for din stemme!');
-            confirmVoteAgainstBtn.style.display = 'none';
-            voteForBtn.disabled = true;
-            voteAgainstBtn.disabled = true;
+            axios.post('http://localhost:3000/for-imod', { voteOption: 'against' })
+            .then(response => {
+                alert('Tak for din stemme!');
+                confirmVoteAgainstBtn.style.display = 'none';
+                voteForBtn.disabled = true;
+                voteAgainstBtn.disabled = true;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
-    });
+        });
     </script>
     <style>
         .vote-button, .confirm-button {
@@ -589,5 +602,7 @@ https://templatemo.com/tm-554-ocean-vibes
             cursor: not-allowed;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
