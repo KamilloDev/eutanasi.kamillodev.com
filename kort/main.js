@@ -26,25 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error("Error loading SVG:", error));
 
-    function initMap() {
-        console.log("Initializing map with countriesData:", countriesData);
-        const map = document.querySelector('svg');
-        const countries = document.querySelectorAll('path');
+    // main.js
 
-        countries.forEach(country => {
-            const countryId = country.id;
-            const countryData = countriesData.find(c => c.id === countryId);
-            console.log(`Country ID: ${countryId}, Data:`, countryData);
+function initMap() {
+    const map = document.querySelector('svg');
+    const countries = document.querySelectorAll('path');
 
-            if (countryData) {
-                country.style.fill = countryData.supportsEuthanasia ? 'red' : 'blue';
-                country.addEventListener('click', () => {
-                    console.log(`Country ${countryData.name} clicked.`);
-                    displayCountryInfo(countryData);
-                });
-            } else {
-                country.style.fill = '#ccc';
+    countries.forEach(country => {
+        const countryId = country.id;
+        const countryData = countriesData.find(c => c.id === countryId);
+
+        if (countryData) {
+            // Set fill color based on eutanasiType
+            let fillColor = '#6E00B3';
+            if (countryData.eutanasiType === 'aktiv dødshjælp') {
+                fillColor = 'yellow';
+            } else if (countryData.eutanasiType === 'assisteret dødshjælp') {
+                fillColor = 'orange';
+            } else if (countryData.eutanasiType === 'passiv dødshjælp') {
+                fillColor = 'purple';
             }
+
+            country.style.fill = fillColor;
 
             // Hover effects
             country.addEventListener('mouseenter', () => {
@@ -52,10 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             country.addEventListener('mouseleave', () => {
-                country.style.fill = countryData ? (countryData.supportsEuthanasia ? 'red' : 'blue') : '#ccc';
+                country.style.fill = fillColor;
             });
-        });
-    }
+
+            // Click event to display country info
+            country.addEventListener('click', () => {
+                displayCountryInfo(countryData);
+            });
+
+        } else {
+            country.style.fill = '#ccc';
+        }
+    });
+}
 
     function displayCountryInfo(country) {
       const map = document.querySelector('svg');
@@ -63,14 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const countryName = sidePanel.querySelector('.country-name');
       const supportsEuthanasia = sidePanel.querySelector('.tillader-eutanasi');
       const hvornårEutanasi = sidePanel.querySelector('.hvornår-eutanasi');
-      const hvormangeEutanasi = sidePanel.querySelector('.hvormange-eutanasi');
+      const hvormangeEutanasi = sidePanel.querySelector('.lovligtUdland');
       const flagImg = sidePanel.querySelector('.photo');
   
       if (countryName && supportsEuthanasia && hvornårEutanasi && hvormangeEutanasi && flagImg) {
           countryName.textContent = country.name;
-          supportsEuthanasia.textContent = country.supportsEuthanasia ? 'Ja' : 'Nej';
-          hvornårEutanasi.textContent = country.hvornårEutanasi;
-          hvormangeEutanasi.textContent = country.hvormangeEutanasi;
+          supportsEuthanasia.textContent = country.eutanasiType || 'Ingen';
+          hvornårEutanasi.textContent = country.hvornårEutanasi || 'N/A';
+          hvormangeEutanasi.textContent = country.lovligtUdland || 'N/A';
           flagImg.src = `../img/flags/${country.id.toLowerCase()}.png`;
           flagImg.alt = `Flag of ${country.name}`;
           console.log(`Flag path set to: ../img/flags/${country.id.toLowerCase()}.png`);

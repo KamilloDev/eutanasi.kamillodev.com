@@ -1,72 +1,33 @@
+// data.js
+
 const countriesData = [
     {
         id: 'ES',
         name: 'Spanien',
-        supportsEuthanasia: true,
+        eutanasiType: 'aktiv dødshjælp',
         hvornårEutanasi: '2021',
-        hvormangeEutanasi: 'Not available for non-residents'
-    },
-    {
-        id: 'PT',
-        name: 'Portugal',
-        supportsEuthanasia: true,
-        hvornårEutanasi: '2023',
-        hvormangeEutanasi: 'N/A'
-    },
-    {
-        id: 'NL',
-        name: 'Netherlands',
-        supportsEuthanasia: true,
-        hvornårEutanasi: '2002',
-        hvormangeEutanasi: '5,000 per year'
-    },
-    {
-        id: 'LU',
-        name: 'Luxembourg',
-        supportsEuthanasia: true,
-        hvornårEutanasi: '2009',
-        hvormangeEutanasi: 'N/A'
-    },
-    {
-        id: 'BE',
-        name: 'Belgium',
-        supportsEuthanasia: true,
-        hvornårEutanasi: '2002',
-        hvormangeEutanasi: '5,000 per year'
+        lovligtUdland: 'Ikke tilladt'
     },
     {
         id: 'CH',
         name: 'Schweiz',
-        supportsEuthanasia: false,
-        hvornårEutanasi: 'Assisted suicide allowed',
-        hvormangeEutanasi: 'N/A'
+        eutanasiType: 'assisteret dødshjælp',
+        hvornårEutanasi: '1941',
+        lovligtUdland: 'Tilladt'
     },
     {
-        id: 'AT',
-        name: 'Østrig',
-        supportsEuthanasia: false,
-        hvornårEutanasi: 'Assisted suicide allowed',
-        hvormangeEutanasi: 'N/A'
+        id: 'DK',
+        name: 'Danmark',
+        eutanasiType: 'passiv dødshjælp',
+        hvornårEutanasi: 'Ikke tilladt',
+        lovligtUdland: 'N/A'
     },
     {
-        id: 'DE',
-        name: 'Tyskland',
-        supportsEuthanasia: false,
-        hvornårEutanasi: 'Not legal',
-        hvormangeEutanasi: 'N/A'
+        id: 'NL',
+        name: 'Holland',
+        eutanasiType: 'aktiv dødshjælp',
+        hvornårEutanasi: '2001',
+        lovligtUdland: 'Ikke tilladt'
     },
-    {
-        id: 'IT',
-        name: 'Italien',
-        supportsEuthanasia: false,
-        hvornårEutanasi: 'Not legal',
-        hvormangeEutanasi: 'N/A'
-    },
-    {
-        id: 'ALL',
-        name: 'Alle andre lande',
-        supportsEuthanasia: false,
-        hvornårEutanasi: 'Not legal',
-        hvormangeEutanasi: 'N/A'
-    }
+    // Tilføj flere lande efter behov
 ];
