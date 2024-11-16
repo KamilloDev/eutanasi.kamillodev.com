@@ -1,60 +1,41 @@
-<!-- public/admin.html -->
 <!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Admin - Stemmeresultater</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    .result-item {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .error {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
+  <title>Admin - Stemmetælling</title>
 </head>
 <body>
-  <h1>Stemmeresultater</h1>
-  <div id="results"></div>
+  <h1>Stemmetælling</h1>
+  <div id="vote-counts"></div>
+
   <script>
-    const password = prompt('Indtast administrator password:');
+    // Prompt for admin password
+    const adminPassword = prompt('Indtast admin password:');
+
     fetch('/vote-counts', {
+      method: 'GET',
       headers: {
-        'Authorization': 'Basic ' + btoa('admin:' + password)
+        'Authorization': 'Basic ' + btoa('admin:' + adminPassword)
       }
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Fejl i godkendelse.');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const resultsDiv = document.getElementById('results');
-        if (data.length === 0) {
-          resultsDiv.innerHTML = '<p>Ingen stemmer afgivet endnu.</p>';
-        } else {
-          data.forEach(item => {
-            const p = document.createElement('p');
-            p.className = 'result-item';
-            p.textContent = `${item.vote_option}: ${item.vote_count} stemmer`;
-            resultsDiv.appendChild(p);
-          });
-        }
-      })
-      .catch(error => {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = `<p class="error">${error.message}</p>`;
+    .then(response => {
+      if (response.status === 401) {
+        throw new Error('Unauthorized');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const countsDiv = document.getElementById('vote-counts');
+      data.forEach(item => {
+        const p = document.createElement('p');
+        p.textContent = `${item.vote_option}: ${item.vote_count}`;
+        countsDiv.appendChild(p);
       });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Kunne ikke hente stemmerne. Tjek om du har indtastet det korrekte password.');
+    });
   </script>
 </body>
 </html>
