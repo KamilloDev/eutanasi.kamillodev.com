@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://kamillodev.github.io',
+  origin: 'https://eutanasi.kamillodev.com', // Should match your frontend domain
 }));
 app.use(express.static('public')); // Serve static files from 'public' directory
 

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     confirmVoteForBtn.addEventListener('click', () => {
-      axios.post('http://10.207.1.146:3000/for-imod', { voteOption: 'for' })
+      axios.post('https://eutanasi-kamillodev-com.onrender.com', { voteOption: 'for' })
         .then(response => {
           alert('Tak for din stemme!');
           confirmVoteForBtn.style.display = 'none';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     confirmVoteAgainstBtn.addEventListener('click', () => {
-      axios.post('http://10.207.1.146:3000/for-imod', { voteOption: 'against' })
+      axios.post('https://eutanasi-kamillodev-com.onrender.com', { voteOption: 'against' })
         .then(response => {
           alert('Tak for din stemme!');
           confirmVoteAgainstBtn.style.display = 'none';
