@@ -48,42 +48,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-        const voteForBtn = document.getElementById('vote-for');
-        const voteAgainstBtn = document.getElementById('vote-against');
-        const voteMessage = document.getElementById('vote-message');
-      
-        const backendUrl = 'https://eutanasi-kamillodev-com.onrender.com'; // Replace with your Raspberry Pi's IP address
-      
-        voteForBtn.addEventListener('click', () => {
-          submitVote('for');
-        });
-      
-        voteAgainstBtn.addEventListener('click', () => {
-          submitVote('against');
-        });
-      
-        function submitVote(option) {
-          fetch(`${backendUrl}/vote`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ option })
-          })
-          .then(response => response.json())
-          .then(data => {
-            voteMessage.textContent = data.message;
-            // Disable buttons after voting
-            voteForBtn.disabled = true;
-            voteAgainstBtn.disabled = true;
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            voteMessage.textContent = 'An error occurred while submitting your vote.';
-          });
-        }
-      </script>
+    <script src="main.js"></script>
+    
 </body>
 </html>
