@@ -194,6 +194,12 @@ a {
     padding-right: 15px;
     margin: 0 auto 135px;
 }
+.tm-container1 {
+    max-width: 1006px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto 135px;
+}
 
 .tm-footer {
     display: flex;
@@ -208,6 +214,7 @@ a {
     text-align: right;
     display: block;
 }
+
 
 .tm-close-popup i {
     margin-left: 10px;
